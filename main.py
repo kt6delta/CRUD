@@ -1,5 +1,5 @@
 import mysql.connector as conector
-cnx = conector.connect(user='root', password='mysql2019',
+cnx = conector.connect(user='root', password='root',#'mysql2019',
 host='localhost',
 database='contactos')
 cursor=cnx.cursor()
