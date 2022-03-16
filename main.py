@@ -3,7 +3,9 @@ ventana = tk.Tk()
 ventana.geometry("500x300")
 ventana.resizable(0,0)
 ventana.title("CRUD persona")
+img = tk.PhotoImage(file = "img/fondo.gif")#solo .gif
 
+background = tk.Label(image = img)
 LDoc= tk.Label(ventana, text="documento",bg = "#88cffa")
 LName= tk.Label(ventana, text="nombre",bg = "#88cffa")
 LApelli= tk.Label(ventana, text="apellido",bg = "#88cffa")
@@ -29,6 +31,7 @@ btnModifica=tk.Button(ventana, text="modificar", padx=18,pady=15, bg = "#88cffa"
 btnElimina=tk.Button(ventana, text="Eliminar", padx=21,pady=15, bg = "#88cffa", command = lambda: Elimina("python"))
 btnLimpia=tk.Button(ventana, text="Limpiar", padx=23,pady=15, bg = "#88cffa",command = lambda: Limpia("python"))
 
+background.place(x = 0, y = 0, relwidth = 1, relheight = 1)
 LDoc.place(x=50, y=50)
 txtDoc.place(x=150, y=40)
 LName.place(x=50, y=90)
