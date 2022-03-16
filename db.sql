@@ -18,10 +18,6 @@ CREATE TABLE IF NOT EXISTS `contactos`.`persona` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-
--- -----------------------------------------------------
--- Table `contactos`.`tipo_contacto`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contactos`.`tipo_contacto` (
   `id` INT(11) NOT NULL,
   `nombre` VARCHAR(50) NOT NULL,
@@ -30,10 +26,6 @@ CREATE TABLE IF NOT EXISTS `contactos`.`tipo_contacto` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-
--- -----------------------------------------------------
--- Table `contactos`.`contacto`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contactos`.`contacto` (
   `id` INT(11) NOT NULL,
   `doc_persona` INT(11) NOT NULL,
@@ -56,9 +48,6 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
--- -----------------------------------------------------
--- Table `contactos`.`Tomador`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contactos`.`Tomador` (
   `idDocTomador` INT NOT NULL AUTO_INCREMENT,
   `Nombres` VARCHAR(45) NOT NULL,
@@ -68,10 +57,6 @@ CREATE TABLE IF NOT EXISTS `contactos`.`Tomador` (
   PRIMARY KEY (`idDocTomador`))
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `contactos`.`Vehiculo`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contactos`.`Vehiculo` (
   `idVehiculo` INT NOT NULL AUTO_INCREMENT,
   `tipoVehiculo` VARCHAR(45) NOT NULL,
@@ -117,10 +102,6 @@ CREATE TABLE IF NOT EXISTS `contactos`.`Poliza` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `contactos`.`Telefono`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contactos`.`Telefono` (
   `idTelefono` INT NOT NULL AUTO_INCREMENT,
   `numero` INT NOT NULL,
