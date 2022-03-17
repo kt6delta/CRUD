@@ -1,6 +1,6 @@
 import tkinter as tk
+from tkinter import messagebox as ms
 from conexion import Conecta as con
-
 
 ventana = tk.Tk()
 ventana.geometry("500x300")
@@ -20,22 +20,35 @@ txtApelli= tk.Entry(ventana, font="helvetica 13",bg = "#88cffa")
 def fCrea():
   date=(int(txtDoc.get()),txtName.get(),txtApelli.get())
   con.Crea(date)
+  ms.showinfo("CRUD", "Se creo exitosamente")
   
-def fModifica(nombre):
-  print("hola"+ nombre )
-  
+def fModifica():
+  date=(int(txtDoc.get()),txtApelli.get(),txtName.get())
+  con.Modifica(date)
+  ms.showinfo("CRUD", "Se modifico exitosamente")
   
 
-def fElimina(var1):
-  print(var1)
+def fElimina():
+  date=int(txtDoc.get())
+  con.Elimina(date)
+  ms.showinfo("CRUD", "Se elimino exitosamente")
 
-def fRead(var):
-  print(var)
+def fRead():
+  date=(int(txtDoc.get()),txtName.get(),txtApelli.get())
+  consulta=con.Read(date)
+  txtDoc.delete(0, tk.END)
+  txtName.delete(0, tk.END)
+  txtApelli.delete(0, tk.END)
+
+  txtDoc.insert(0, str(consulta[0]))
+  txtName.insert(0, consulta[1])
+  txtApelli.insert(0, consulta[2])
+  ms.showinfo("CRUD", "Se leyo exitosamente")
 
 btnCrea =tk.Button(ventana, text="Crear", padx=30,pady=15, bg = "#88cffa",command = lambda: fCrea())
-btnModifica=tk.Button(ventana, text="modificar", padx=18,pady=15, bg = "#88cffa", command = lambda: fModifica("python"))
-btnElimina=tk.Button(ventana, text="Eliminar", padx=21,pady=15, bg = "#88cffa", command = lambda: fElimina("pyton"))
-btnRead=tk.Button(ventana, text="Leer", padx=30,pady=15, bg = "#88cffa",command = lambda: fRead("python"))
+btnModifica=tk.Button(ventana, text="modificar", padx=18,pady=15, bg = "#88cffa", command = lambda: fModifica())
+btnElimina=tk.Button(ventana, text="Eliminar", padx=21,pady=15, bg = "#88cffa", command = lambda: fElimina())
+btnRead=tk.Button(ventana, text="Leer", padx=30,pady=15, bg = "#88cffa",command = lambda: fRead())
 
 background.place(x = 0, y = 0, relwidth = 1, relheight = 1)
 LDoc.place(x=50, y=50)
@@ -51,3 +64,5 @@ btnElimina.place(x=260, y=170)
 btnRead.place(x=370, y=170)
 
 ventana.mainloop()
+
+
