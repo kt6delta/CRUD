@@ -18,9 +18,9 @@ txtName= tk.Entry(ventana, font="helvetica 13",bg = "#88cffa")
 txtApelli= tk.Entry(ventana, font="helvetica 13",bg = "#88cffa")
 
 def fCrea():
-  date=(Int(txtDoc.get()),txtName.get(),txtApelli.get())
+  date=(int(txtDoc.get()),txtName.get(),txtApelli.get())
   con.Crea(date)
-
+  
 def fModifica(nombre):
   print("hola"+ nombre )
   
