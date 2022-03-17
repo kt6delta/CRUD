@@ -23,7 +23,7 @@ def fCrea():
   ms.showinfo("CRUD", "Se creo exitosamente")
   
 def fModifica():
-  date=(int(txtDoc.get()),txtApelli.get(),txtName.get())
+  date=(txtName.get(),txtApelli.get(),int(txtDoc.get()))
   con.Modifica(date)
   ms.showinfo("CRUD", "Se modifico exitosamente")
   
@@ -66,3 +66,4 @@ btnRead.place(x=370, y=170)
 ventana.mainloop()
 
 
+ 

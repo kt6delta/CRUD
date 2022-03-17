@@ -20,10 +20,10 @@ class Conecta():
     host='localhost',
     database='contactos')
     cursor=cnx.cursor()
-    
-    sql="UPDATE persona SET nombre = %s, apellidos = %s WHERE persona.documento = %s"
-    valores=[Mdato]#valores=[(2,"lorenzo","juan")]
-    cursor.executemany(sql,valores)
+
+    sql="UPDATE `persona` SET `nombre` = %s, `apellidos` = %s WHERE `persona`.`documento` = %s"
+    valores=Mdato#valores=[("pepa","perez",54)]
+    cursor.execute(sql,valores)
     cnx.commit()
     cursor.close()
     cnx.close()
@@ -55,6 +55,10 @@ class Conecta():
     mycursor.close()
     cnx.close()
     return consulta
+
+
+
+ 
 
 
 
